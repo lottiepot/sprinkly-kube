@@ -1,9 +1,0 @@
-context: sprinkly-sprinkly-kube
-contexts:
-    sprinkly-sprinkly-kube:
-        endpoints:
-            - https://sprinkly.eu-central-1.omni.siderolabs.io
-        auth:
-            siderov1:
-                identity: evie@snugg.ie
-        cluster: sprinkly-kube
