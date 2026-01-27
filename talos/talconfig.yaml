@@ -4,10 +4,10 @@ clusterName: kubernetes
 talosVersion: "${talosVersion}"
 kubernetesVersion: "${kubernetesVersion}"
 
-endpoint: https://131.153.158.207:6443
+endpoint: https://10.0.1.40:6443
 additionalApiServerCertSans: &sans
   - "127.0.0.1"
-  - "131.153.158.207"
+  - "10.0.1.40"
 additionalMachineCertSans: *sans
 
 clusterPodNets: ["10.42.0.0/16"]
@@ -36,7 +36,7 @@ nodes:
             network: 0.0.0.0/0
         mtu: 1500
         vip:
-          ip: "131.153.158.207"
+          ip: "10.0.1.40"
   - hostname: "sprinkly-kube-green"
     ipAddress: "10.0.1.187"
     installDisk: "/dev/sda"
@@ -55,7 +55,7 @@ nodes:
             network: 0.0.0.0/0
         mtu: 1500
         vip:
-          ip: "131.153.158.207"
+          ip: "10.0.1.40"
   - hostname: "sprinkly-kube-blue"
     ipAddress: "10.0.1.144"
     installDisk: "/dev/sda"
@@ -74,7 +74,7 @@ nodes:
             network: 0.0.0.0/0
         mtu: 1500
         vip:
-          ip: "131.153.158.207"
+          ip: "10.0.1.40"
 
 # Global patches
 patches:
