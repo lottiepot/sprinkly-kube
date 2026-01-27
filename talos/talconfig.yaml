@@ -4,10 +4,10 @@ clusterName: kubernetes
 talosVersion: "${talosVersion}"
 kubernetesVersion: "${kubernetesVersion}"
 
-endpoint: https://10.0.1.136:6443
+endpoint: https://131.153.158.207:6443
 additionalApiServerCertSans: &sans
   - "127.0.0.1"
-  - "10.0.1.136"
+  - "131.153.158.207"
 additionalMachineCertSans: *sans
 
 clusterPodNets: ["10.42.0.0/16"]
@@ -30,13 +30,13 @@ nodes:
           hardwareAddr: "bc:24:11:87:ae:8b"
         dhcp: false
         addresses:
-          - "10.0.1.136/24"
+          - "10.0.1.136/12"
         routes:
-          - gateway: "10.0.1.1"
+          - gateway: "10.96.0.1"
             network: 0.0.0.0/0
         mtu: 1500
         vip:
-          ip: "10.0.1.136"
+          ip: "131.153.158.207"
   - hostname: "sprinkly-kube-green"
     ipAddress: "10.0.1.187"
     installDisk: "/dev/sda"
@@ -49,13 +49,13 @@ nodes:
           hardwareAddr: "bc:24:11:c2:13:1e"
         dhcp: false
         addresses:
-          - "10.0.1.187/24"
+          - "10.0.1.187/12"
         routes:
-          - gateway: "10.0.1.1"
+          - gateway: "10.96.0.1"
             network: 0.0.0.0/0
         mtu: 1500
         vip:
-          ip: "10.0.1.136"
+          ip: "131.153.158.207"
   - hostname: "sprinkly-kube-blue"
     ipAddress: "10.0.1.144"
     installDisk: "/dev/sda"
@@ -68,13 +68,13 @@ nodes:
           hardwareAddr: "bc:24:11:a2:c4:d4"
         dhcp: false
         addresses:
-          - "10.0.1.144/24"
+          - "10.0.1.144/12"
         routes:
-          - gateway: "10.0.1.1"
+          - gateway: "10.96.0.1"
             network: 0.0.0.0/0
         mtu: 1500
         vip:
-          ip: "10.0.1.136"
+          ip: "131.153.158.207"
 
 # Global patches
 patches:
