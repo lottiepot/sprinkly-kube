@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: omgbot-deployment
+  namespace: default
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: omgbot
+  template:
+    metadata:
+      labels:
+        app: omgbot
+    spec:
+      containers:
+      - name: omgbot
+        image: lottiepot/omgbot:v1.0
+        # This part injects the encrypted .env variables
+        envFrom:
+        - secretRef:
+            name: omgbot-secrets
